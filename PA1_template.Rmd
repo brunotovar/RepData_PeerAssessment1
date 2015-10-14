@@ -1,8 +1,10 @@
 ---
-title: "Reproducible Research: Peer Assessment 1"
+title: 'Reproducible Research: Peer Assessment 1'
 author: "Bruno Tovar"
 date: "13 de outubro de 2015"
-output: html_document
+output:
+  html_document:
+    self_contained: no
 ---
 
 ### Introduction
@@ -145,7 +147,7 @@ str(NewActivityData)
 
 And then, we are going to check this pattern, making a panel plot containing a time series plot of the 5-minute interval (x-axis) and the average number of steps taken, averaged across all weekday days or weekend days (y-axis).
 
-```{r}
+```{r, fig.height=10}
 
 NewActivityDataWeekend<-NewActivityData[NewActivityData$weekday=='weekend',]
 NewActivityDataWeekday<-NewActivityData[NewActivityData$weekday=='weekday',]

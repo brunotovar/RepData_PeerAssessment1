@@ -59,6 +59,13 @@ if (window.hljs && document.readyState && document.readyState === "complete") {
 <h4 class="date"><em>13 de outubro de 2015</em></h4>
 </div>
 
+<div id="TOC">
+<ul>
+<li><a href="#introduction">Introduction</a></li>
+<li><a href="#data">Data</a></li>
+<li><a href="#assignment">Assignment</a></li>
+</ul>
+</div>
 
 <div id="introduction" class="section level3">
 <h3>Introduction</h3>
@@ -92,7 +99,9 @@ ActivityData$date &lt;- as.Date(ActivityData$date, &quot;%Y-%m-%d&quot;)</code><
 <pre class="r"><code>StepsDay &lt;- tapply(ActivityData$steps, ActivityData$date, FUN=sum)</code></pre>
 <p>And then we make a histogram of the total number of steps taken each day as described below.</p>
 <pre class="r"><code>hist(StepsDay, main=&quot;Total number of steps taken each day&quot;, xlab=&quot;number of steps&quot;, col=&quot;blue&quot;)</code></pre>
-<p><img src="PA1_template_files/figure-html/unnamed-chunk-4-1.png" title="" alt="" width="672" /></p>
+<div class="figure">
+<img src="PA1_template_files/figure-html/unnamed-chunk-4-1.png" />
+</div>
 <p>Finnaly, we calculate the mean and the median of the total number of steps taken per day.</p>
 <pre class="r"><code>mean(StepsDay, na.rm=TRUE)</code></pre>
 <pre><code>## [1] 10766.19</code></pre>
@@ -104,7 +113,9 @@ ActivityData$date &lt;- as.Date(ActivityData$date, &quot;%Y-%m-%d&quot;)</code><
 <p>To analyse the average daily activity pattern, we made a time series plot of the 5-minute interval (x-axis) and the average number of steps taken, averaged across all days (y-axis).</p>
 <pre class="r"><code>StepsInterval &lt;- tapply(ActivityData$steps, ActivityData$interval, FUN=mean,  na.rm = TRUE)
 plot(names(StepsInterval), StepsInterval, ylab=&quot;average number of steps taken&quot;, xlab=&quot;5-minute interval&quot;, type=&quot;l&quot;)</code></pre>
-<p><img src="PA1_template_files/figure-html/unnamed-chunk-6-1.png" title="" alt="" width="672" /></p>
+<div class="figure">
+<img src="PA1_template_files/figure-html/unnamed-chunk-6-1.png" />
+</div>
 <p>As a result, we can notice that the interval between 750-1000 concentrated the major activities in a daily bases.</p>
 <p>In fact, we can get the specifyc 5-minute interval, on average across all the days in the dataset, that contains the maximum number of steps. To do that, we just need to sort the array obtained above in a decreasing order.</p>
 <pre class="r"><code>StepsIntervalSort &lt;-sort(StepsInterval,decreasing = TRUE)</code></pre>
@@ -137,7 +148,9 @@ NewActivityData$steps[is.na(NewActivityData$steps)] &lt;- tapply(NewActivityData
 <p>And then, we made a histogram of the total number of steps taken each day.</p>
 <pre class="r"><code>NewStepsDay &lt;- tapply(NewActivityData$steps, NewActivityData$date, FUN=sum)
 hist(NewStepsDay, main=&quot;Total number of steps taken each day&quot;, xlab=&quot;number of steps&quot;, col=&quot;red&quot;)</code></pre>
-<p><img src="PA1_template_files/figure-html/unnamed-chunk-13-1.png" title="" alt="" width="672" /></p>
+<div class="figure">
+<img src="PA1_template_files/figure-html/unnamed-chunk-13-1.png" />
+</div>
 <p>Going futher, we can check the mean and median total number of steps taken per day, as we did it and reported below:</p>
 <pre class="r"><code>median(NewStepsDay)</code></pre>
 <pre><code>## [1] 10766.19</code></pre>
@@ -168,7 +181,9 @@ WeekdayGraf &lt;- tapply(NewActivityDataWeekday$steps, NewActivityDataWeekday$in
 par(mfrow = c(2,1), mar = c(5,4,5,1))
 plot(names(WeekendGraf), WeekendGraf, ylab=&quot;average number of steps taken&quot;, xlab=&quot;5-minute interval&quot;, type=&quot;l&quot;, main=&quot;Weekend pattern&quot;)
 plot(names(WeekdayGraf), WeekdayGraf, ylab=&quot;average number of steps taken&quot;, xlab=&quot;5-minute interval&quot;, type=&quot;l&quot;, main=&quot;Weekday pattern&quot;)</code></pre>
-<p><img src="PA1_template_files/figure-html/unnamed-chunk-16-1.png" title="" alt="" width="672" /></p>
+<div class="figure">
+<img src="PA1_template_files/figure-html/unnamed-chunk-16-1.png" />
+</div>
 <p>As a result, we can notice that weekends have a more distributed pattern during the day and the weekdays have a more concentrated pattern between 500-1000.</p>
 </div>
 </div>

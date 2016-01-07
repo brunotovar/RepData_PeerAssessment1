@@ -1,7 +1,7 @@
 ---
 title: 'Reproducible Research: Peer Assessment 1'
 author: "Bruno Tovar"
-date: "13 de outubro de 2015"
+date: "07 de janeiro de 2016"
 output:
   html_document:
     fig_caption: yes

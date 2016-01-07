@@ -1,6 +1,6 @@
 # Reproducible Research: Peer Assessment 1
 Bruno Tovar  
-13 de outubro de 2015  
+07 de janeiro de 2016
 
 ### Introduction
 
